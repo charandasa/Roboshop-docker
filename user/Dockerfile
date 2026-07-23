@@ -2,7 +2,7 @@ FROM node:20
 WORKDIR /app
 COPY *.js .
 RUN npm install
-ENV MONGO "true"\
+ENV MONGO "true" \
 ENV MONGO_URL="mongodb://mongodb:27017/users"
 ENV REDIS_URL='redis://redis:6379'
 CMD ["node", "server.js"]
