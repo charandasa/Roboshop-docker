@@ -43,6 +43,12 @@ services:
     build: ./mysql
     image: charandasa/mysql:1.0.0
     container_name: mysql
+  rabbitmq:
+    image: rabbitmq:3
+    environment:
+      RABBIT_MQ_DEFAULT_USER= roboshop
+      RABBIT_MQ_DEFAULT_PASS= roboshop123
+    container_name: rabbitmq
 
   mongodb:
     build: ./mongodb
