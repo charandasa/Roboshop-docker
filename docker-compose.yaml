@@ -46,8 +46,8 @@ services:
   rabbitmq:
     image: rabbitmq:3
     environment:
-      RABBIT_MQ_DEFAULT_USER= roboshop
-      RABBIT_MQ_DEFAULT_PASS= roboshop123
+      RABBIT_MQ_DEFAULT_USER: roboshop
+      RABBIT_MQ_DEFAULT_PASS: roboshop123
     container_name: rabbitmq
 
   mongodb:
