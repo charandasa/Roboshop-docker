@@ -1,0 +1,41 @@
+services:
+  catalogue:
+    build: ./catalogue
+    image: charandasa/catalogue:1.0.0
+    container_name: catalogue
+  depends_on:
+  - mongodb
+
+  user:
+    build: ./user
+    image: charandasa/user:1.0.0
+    container_name: user
+    depends_on:
+    - mongodb
+    - redis
+
+  frontend:
+    build: ./frontend
+    image: charandasa/frontend:1.0.0
+    container_name: frontend
+    ports:
+    - "80:80"
+    depends_on:
+    - catalogue
+    - user
+    - cart
+
+  redis:
+    image: redis:7.0
+    container: redis
+
+  mongodb:
+    build: ./mongodb
+    image: charandasa/mongodb:1.0.0
+    container_name: mongodb
+
+network:
+  default: 
+    driver: bridge
+    name: roboshop
+    external: false
