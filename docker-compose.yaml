@@ -3,8 +3,8 @@ services:
     build: ./catalogue
     image: charandasa/catalogue:1.0.0
     container_name: catalogue
-  depends_on:
-  - mongodb
+    depends_on:
+    - mongodb
   user:
     build: ./user
     image: charandasa/user:1.0.0
@@ -15,7 +15,7 @@ services:
   cart:
     build: ./cart
     image: charandasa/cart:1.0.0
-    container_name:cart
+    container_name: cart
     depends_on:
     - redis
   frontend:
@@ -23,7 +23,7 @@ services:
     image: charandasa/frontend:1.0.0
     container_name: frontend
     ports:
-    - "80:80"
+      - "80:80"
     depends_on:
     - catalogue
     - user
@@ -31,7 +31,7 @@ services:
 
   redis:
     image: redis:7.0
-    container: redis
+    container_name: redis
 
   mongodb:
     build: ./mongodb
