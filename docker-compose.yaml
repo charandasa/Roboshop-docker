@@ -5,7 +5,6 @@ services:
     container_name: catalogue
   depends_on:
   - mongodb
-
   user:
     build: ./user
     image: charandasa/user:1.0.0
@@ -19,7 +18,6 @@ services:
     container_name:cart
     depends_on:
     - redis
-
   frontend:
     build: ./frontend
     image: charandasa/frontend:1.0.0
@@ -40,7 +38,7 @@ services:
     image: charandasa/mongodb:1.0.0
     container_name: mongodb
 
-network:
+networks:
   default: 
     driver: bridge
     name: roboshop
