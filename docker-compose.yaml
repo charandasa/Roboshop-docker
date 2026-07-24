@@ -41,7 +41,7 @@ services:
     container_name: redis
   mysql:
     build: ./mysql
-    image: charandasa/mysq;:1.0.0
+    image: charandasa/mysq:1.0.0
     container_name: mysql
 
   mongodb:
