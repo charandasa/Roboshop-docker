@@ -24,7 +24,6 @@ services:
     container_name: shipping
     depends_on:
     - mysql
-    - cart
   frontend:
     build: ./frontend
     image: charandasa/frontend:1.0.0
