@@ -38,8 +38,6 @@ services:
       AMQP_PASS: "roboshop123"
     depends_on:
     - rabbitmq
-    - cart
-    - user
   frontend:
     build: ./frontend
     image: charandasa/frontend:1.0.0
