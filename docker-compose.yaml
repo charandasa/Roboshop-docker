@@ -18,6 +18,13 @@ services:
     container_name: cart
     depends_on:
     - redis
+  shipping:
+    build: ./shipping
+    image: charandasa/shipping:1.0.0
+    container_name: shipping
+    depends_on:
+    - mysql
+    - cart
   frontend:
     build: ./frontend
     image: charandasa/frontend:1.0.0
@@ -32,6 +39,10 @@ services:
   redis:
     image: redis:7.0
     container_name: redis
+  mysql:
+    build: ./mysql
+    image: charandasa/mysq;:1.0.0
+    container_name: mysql
 
   mongodb:
     build: ./mongodb
